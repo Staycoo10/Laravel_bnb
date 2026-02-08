@@ -1,51 +1,42 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Ruta principală - Home
+Route::get('/', [SiteController::class, 'home'])->name('home');
+
+// Ruta pentru lista de proprietăți
+Route::get('/listings', [SiteController::class, 'listings'])->name('listings');
 
 // Ruta About
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [SiteController::class, 'about'])->name('about');
 
 // Ruta Contact
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 
-// Ruta GET pentru formularul de login - ADAUGĂ ->name('login')
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+// Rute pentru Login
+Route::get('/login', [SiteController::class, 'showLogin'])->name('login');
+Route::post('/login', [SiteController::class, 'processLogin']);
 
-// Procesează login-ul (POST)
-Route::post('/login', function () {
-    return "Autentificare în curs...";
-});
-
-// Ruta cu parametru ID
+// Rute cu parametri 
 Route::get('/user/{id}', function ($id) {
     return "Profil utilizator cu ID = " . $id;
 });
-// Ruta cu doi parametri
+
 Route::get('/article/{category}/{id}', function ($category, $id) {
     return "Articol din categoria: " . $category . " cu ID = " . $id;
 });
 
-// Grup protejat cu middleware auth
+// Grup admin protejat cu middleware
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return "Panoul de administrare";
-    });
+    Route::get('/', [SiteController::class, 'admin'])->name('admin.dashboard');
     
     Route::get('/users', function () {
-        return "Lista utilizatori";
-    });
+        return "Lista utilizatori - Admin";
+    })->name('admin.users');
     
     Route::get('/settings', function () {
-        return "Setări aplicație";
-    });
+        return "Setări aplicație - Admin";
+    })->name('admin.settings');
 });
