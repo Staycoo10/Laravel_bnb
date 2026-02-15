@@ -1,102 +1,90 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despre Noi - Mini AirBnB</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-gray-100">
+@extends('layouts.app')
+
+@section('title', 'Despre Noi - Mini AirBnB')
+
+@section('content')
+<div class="max-w-6xl mx-auto px-4 py-12">
     
-    <!-- Navigation -->
-    <nav class="bg-gray-800 shadow-lg mb-8 border-b border-gray-700">
-        <div class="max-w-5xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="{{ route('home') }}">
-                    <h1 class="text-2xl font-bold text-indigo-400">Mini AirBnB</h1>
-                </a>
-                <div class="space-x-4">
-                    <a href="{{ route('home') }}" class="text-gray-300 hover:text-indigo-400 transition">Acasă</a>
-                    <a href="{{ route('listings') }}" class="text-gray-300 hover:text-indigo-400 transition">Arenda</a>
-                    <a href="{{ route('about') }}" class="text-indigo-400 font-medium">Despre</a>
-                    <a href="{{ route('contact') }}" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4">
-        
-        <div class="bg-gray-800 rounded-lg shadow-xl p-8 mb-6 border border-gray-700">
-            <h1 class="text-3xl font-bold text-white mb-4">Despre Mini AirBnB</h1>
-            <p class="text-gray-300 text-lg mb-4">
-                Mini AirBnB este o platformă care conectează oameni cu locuri unice din întreaga lume. 
-                Credem că fiecare călătorie ar trebui să fie o experiență memorabilă.
-            </p>
-            <p class="text-gray-300 text-lg">
-                Fie că ești în căutarea unui apartament modern în centrul orașului sau o vilă liniștită la munte, 
-                platforma noastră îți oferă acces la cele mai diverse opțiuni de cazare.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            
-            <div class="bg-gray-800 rounded-lg shadow-xl p-6 text-center border border-gray-700">
-                <div class="text-4xl mb-3">🏠</div>
-                <h3 class="text-xl font-bold text-white mb-2">500+ Proprietăți</h3>
-                <p class="text-gray-400">În peste 50 de orașe</p>
-            </div>
-
-            <div class="bg-gray-800 rounded-lg shadow-xl p-6 text-center border border-gray-700">
-                <div class="text-4xl mb-3">⭐</div>
-                <h3 class="text-xl font-bold text-white mb-2">4.8/5 Rating</h3>
-                <p class="text-gray-400">Din 10,000+ recenzii</p>
-            </div>
-
-            <div class="bg-gray-800 rounded-lg shadow-xl p-6 text-center border border-gray-700">
-                <div class="text-4xl mb-3">👥</div>
-                <h3 class="text-xl font-bold text-white mb-2">50,000+ Utilizatori</h3>
-                <p class="text-gray-400">Comunitate activă</p>
-            </div>
-
-        </div>
-
-        <div class="bg-gray-800 rounded-lg shadow-xl p-8 border border-gray-700">
-            <h2 class="text-2xl font-bold text-white mb-4">De Ce Mini AirBnB?</h2>
-            <ul class="space-y-3">
-                <li class="flex items-start">
-                    <span class="text-indigo-400 font-bold text-xl mr-3">✓</span>
-                    <div>
-                        <p class="font-semibold text-white">Verificare Riguroasă</p>
-                        <p class="text-gray-400">Toate proprietățile sunt verificate</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-indigo-400 font-bold text-xl mr-3">✓</span>
-                    <div>
-                        <p class="font-semibold text-white">Suport 24/7</p>
-                        <p class="text-gray-400">Asistență non-stop</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-indigo-400 font-bold text-xl mr-3">✓</span>
-                    <div>
-                        <p class="font-semibold text-white">Prețuri Transparente</p>
-                        <p class="text-gray-400">Fără costuri ascunse</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
+    <!-- Page Header -->
+    <div class="bg-white rounded-2xl shadow-xl p-10 text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-3">Despre Mini AirBnB</h2>
+        <p class="text-xl text-gray-600">Platforma ta de încredere pentru cazări</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-16 py-8 bg-gray-800 border-t border-gray-700">
-        <div class="max-w-5xl mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2026 Mini AirBnB. Toate drepturile rezervate.</p>
-        </div>
-    </footer>
+    <!-- Content Section -->
+    <div class="bg-white rounded-2xl shadow-xl p-10 mb-12">
+        <h3 class="text-3xl font-bold text-gray-800 mb-6">Misiunea Noastră</h3>
+        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+            Mini AirBnB este o platformă care conectează oameni cu locuri unice din întreaga lume. 
+            Credem că fiecare călătorie ar trebui să fie o experiență memorabilă, iar găsirea cazării 
+            perfecte este primul pas către o aventură de neuitat.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+            Fie că ești în căutarea unui apartament modern în centrul orașului, o vilă liniștită 
+            la munte sau o casă primitoare la mare, platforma noastră îți oferă acces la cele mai 
+            diverse opțiuni de cazare, toate verificate și evaluate de comunitatea noastră.
+        </p>
+    </div>
 
-</body>
-</html>
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-xl p-8 text-center text-white">
+            <h4 class="text-5xl font-bold mb-2">500+</h4>
+            <p class="text-xl">Proprietăți</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl shadow-xl p-8 text-center text-white">
+            <h4 class="text-5xl font-bold mb-2">50,000+</h4>
+            <p class="text-xl">Utilizatori</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl shadow-xl p-8 text-center text-white">
+            <h4 class="text-5xl font-bold mb-2">4.8/5</h4>
+            <p class="text-xl">Rating Mediu</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl shadow-xl p-8 text-center text-white">
+            <h4 class="text-5xl font-bold mb-2">50+</h4>
+            <p class="text-xl">Orașe</p>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="bg-white rounded-2xl shadow-xl p-10">
+        <h3 class="text-3xl font-bold text-gray-800 mb-6">De Ce Să Ne Alegi?</h3>
+        <ul class="space-y-4">
+            <li class="flex items-start p-4 bg-gray-50 rounded-xl">
+                <span class="text-2xl text-indigo-600 font-bold mr-4">✓</span>
+                <div>
+                    <p class="font-bold text-gray-800 text-lg">Verificare Riguroasă</p>
+                    <p class="text-gray-600">Toate proprietățile sunt verificate de echipa noastră</p>
+                </div>
+            </li>
+
+            <li class="flex items-start p-4 bg-gray-50 rounded-xl">
+                <span class="text-2xl text-indigo-600 font-bold mr-4">✓</span>
+                <div>
+                    <p class="font-bold text-gray-800 text-lg">Suport 24/7</p>
+                    <p class="text-gray-600">Echipa noastră este disponibilă non-stop pentru asistență</p>
+                </div>
+            </li>
+
+            <li class="flex items-start p-4 bg-gray-50 rounded-xl">
+                <span class="text-2xl text-indigo-600 font-bold mr-4">✓</span>
+                <div>
+                    <p class="font-bold text-gray-800 text-lg">Prețuri Transparente</p>
+                    <p class="text-gray-600">Fără costuri ascunse, fără surprize neplăcute</p>
+                </div>
+            </li>
+
+            <li class="flex items-start p-4 bg-gray-50 rounded-xl">
+                <span class="text-2xl text-indigo-600 font-bold mr-4">✓</span>
+                <div>
+                    <p class="font-bold text-gray-800 text-lg">Rezervare Simplă</p>
+                    <p class="text-gray-600">Proces de rezervare rapid și intuitiv</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+@endsection

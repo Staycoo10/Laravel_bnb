@@ -1,110 +1,103 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Mini AirBnB</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-gray-100">
+@extends('layouts.app')
+
+@section('title', 'Contact - Mini AirBnB')
+
+@section('content')
+<div class="max-w-7xl mx-auto px-4 py-12">
     
-    <!-- Navigation -->
-    <nav class="bg-gray-800 shadow-lg mb-8 border-b border-gray-700">
-        <div class="max-w-5xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="{{ route('home') }}">
-                    <h1 class="text-2xl font-bold text-indigo-400">Mini AirBnB</h1>
-                </a>
-                <div class="space-x-4">
-                    <a href="{{ route('home') }}" class="text-gray-300 hover:text-indigo-400 transition">Acasă</a>
-                    <a href="{{ route('listings') }}" class="text-gray-300 hover:text-indigo-400 transition">Arenda</a>
-                    <a href="{{ route('about') }}" class="text-gray-300 hover:text-indigo-400 transition">Despre</a>
-                    <a href="{{ route('contact') }}" class="text-indigo-400 font-medium">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4">
-        
-        <div class="bg-gray-800 rounded-lg shadow-xl p-8 mb-6 border border-gray-700">
-            <h1 class="text-3xl font-bold text-white mb-2">Contactează-ne</h1>
-            <p class="text-gray-300">
-                Suntem aici pentru a te ajuta. Completează formularul de mai jos sau folosește informațiile de contact.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            
-            <!-- Contact Form -->
-            <div class="bg-gray-800 rounded-lg shadow-xl p-8 border border-gray-700">
-                <h2 class="text-xl font-bold text-white mb-4">Trimite-ne un mesaj</h2>
-                
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-1">Nume</label>
-                        <input type="text" required 
-                               class="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                        <input type="email" required 
-                               class="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-1">Mesaj</label>
-                        <textarea rows="4" required 
-                                  class="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
-                    </div>
-
-                    <button type="submit" 
-                            class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">
-                        Trimite Mesajul
-                    </button>
-                </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="bg-gray-800 rounded-lg shadow-xl p-8 border border-gray-700">
-                <h2 class="text-xl font-bold text-white mb-4">Informații de Contact</h2>
-                
-                <div class="space-y-4">
-                    <div>
-                        <p class="font-semibold text-white mb-1">📧 Email</p>
-                        <p class="text-gray-400">contact@miniairbnb.com</p>
-                    </div>
-
-                    <div>
-                        <p class="font-semibold text-white mb-1">📱 Telefon</p>
-                        <p class="text-gray-400">+40 123 456 789</p>
-                    </div>
-
-                    <div>
-                        <p class="font-semibold text-white mb-1">📍 Adresă</p>
-                        <p class="text-gray-400">Str. Exemplu Nr. 123</p>
-                        <p class="text-gray-400">București, România</p>
-                    </div>
-
-                    <div>
-                        <p class="font-semibold text-white mb-1">🕐 Program</p>
-                        <p class="text-gray-400">Luni - Vineri: 9:00 - 18:00</p>
-                        <p class="text-gray-400">Weekend: 10:00 - 16:00</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <!-- Page Header -->
+    <div class="bg-white rounded-2xl shadow-xl p-10 text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-3">Contactează-ne</h2>
+        <p class="text-xl text-gray-600">Suntem aici pentru a te ajuta</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-16 py-8 bg-gray-800 border-t border-gray-700">
-        <div class="max-w-5xl mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2026 Mini AirBnB. Toate drepturile rezervate.</p>
-        </div>
-    </footer>
+    <!-- Contact Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Contact Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Trimite-ne un mesaj</h3>
+            
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Nume</label>
+                    <input type="text" required 
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition">
+                </div>
 
-</body>
-</html>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" required 
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Subiect</label>
+                    <input type="text" required 
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">Mesaj</label>
+                    <textarea rows="5" required 
+                              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition resize-none"></textarea>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-indigo-700 transition shadow-lg">
+                    Trimite Mesajul
+                </button>
+            </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-6">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Informații de Contact</h3>
+                
+                @if(isset($contactInfo))
+                    <div class="space-y-6">
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">📧 Email</h4>
+                            <p class="text-gray-600">{{ $contactInfo['email'] }}</p>
+                            <p class="text-gray-600">{{ $contactInfo['support_email'] }}</p>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">📱 Telefon</h4>
+                            <p class="text-gray-600">{{ $contactInfo['phone'] }}</p>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">📍 Adresă</h4>
+                            <p class="text-gray-600">{{ $contactInfo['address'] }}</p>
+                            <p class="text-gray-600">{{ $contactInfo['city'] }}</p>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">🕐 Program</h4>
+                            @foreach($contactInfo['schedule'] as $day => $hours)
+                                <p class="text-gray-600"><strong>{{ $day }}:</strong> {{ $hours }}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <div class="space-y-6">
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">📧 Email</h4>
+                            <p class="text-gray-600">contact@miniairbnb.com</p>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <h4 class="font-bold text-gray-800 text-lg mb-2">📱 Telefon</h4>
+                            <p class="text-gray-600">+40 123 456 789</p>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+
+    </div>
+
+</div>
+@endsection

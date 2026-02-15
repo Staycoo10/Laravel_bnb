@@ -1,52 +1,56 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini AirBnB - Acasă</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-gray-100">
+@extends('layouts.app')
+
+@section('title', 'Acasă - Mini AirBnB')
+
+@section('content')
+<div class="max-w-7xl mx-auto px-4 py-12">
     
-    <!-- Navigation -->
-    <nav class="bg-gray-800 shadow-lg mb-8 border-b border-gray-700">
-        <div class="max-w-5xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-indigo-400">Mini AirBnB</h1>
-                <div class="space-x-4">
-                    <a href="{{ route('home') }}" class="text-indigo-400 font-medium">Acasă</a>
-                    <a href="{{ route('listings') }}" class="text-gray-300 hover:text-indigo-400 transition">Arenda</a>
-                    <a href="{{ route('about') }}" class="text-gray-300 hover:text-indigo-400 transition">Despre</a>
-                    <a href="{{ route('contact') }}" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
-                    <a href="{{ route('login') }}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Login</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Hero Section -->
+    <div class="bg-white rounded-2xl shadow-xl p-12 text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Bine ai venit la Mini AirBnB!</h2>
+        <p class="text-xl text-gray-600">Găsește cazarea perfectă pentru următoarea ta aventură.</p>
+    </div>
 
-    <!-- Content -->
-    <div class="max-w-5xl mx-auto px-4">
+    <!-- Features Section -->
+    <div class="mb-12">
+        <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">De ce să ne alegi?</h3>
         
-        <div class="bg-gray-800 rounded-lg shadow-xl p-8 mb-8 border border-gray-700">
-            <h1 class="text-4xl font-bold text-white mb-4">Bine ai venit la Mini AirBnB!</h1>
-            <p class="text-gray-300 text-lg mb-4">
-                Găsește cazarea perfectă pentru următoarea ta aventură. 
-                Avem proprietăți în cele mai frumoase orașe din România.
-            </p>
-            <p class="text-gray-400">
-                Navighează prin paginile noastre pentru a descoperi toate opțiunile disponibile.
-            </p>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition">
+                <span class="text-5xl block mb-4">🏠</span>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">500+ Proprietăți</h4>
+                <p class="text-gray-600">Opțiuni variate în toată România</p>
+            </div>
 
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition">
+                <span class="text-5xl block mb-4">⭐</span>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Verificate</h4>
+                <p class="text-gray-600">Toate proprietățile sunt verificate</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition">
+                <span class="text-5xl block mb-4">💰</span>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Prețuri Bune</h4>
+                <p class="text-gray-600">Oferte competitive și transparente</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition">
+                <span class="text-5xl block mb-4">🔒</span>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Securitate</h4>
+                <p class="text-gray-600">Plăți sigure și protecție</p>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-16 py-8 bg-gray-800 border-t border-gray-700 ">
-        <div class="max-w-5xl mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2026 Mini AirBnB. Toate drepturile rezervate.</p>
-        </div>
-    </footer>
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-12 text-center text-white">
+        <h3 class="text-3xl font-bold mb-4">Explorează Proprietățile</h3>
+        <p class="text-xl mb-6 text-indigo-100">Descoperă cele mai bune oferte pentru vacanța ta</p>
+        <a href="{{ route('listings') }}" 
+           class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+            Vezi Toate Proprietățile
+        </a>
+    </div>
 
-</body>
-</html>
+</div>
+@endsection
