@@ -25,6 +25,11 @@
                     Contact
                 </a>
             </li>
+             <li>
+                <a href="{{ route('properties.index') }}" class="text-gray-700 hover:text-gray-900 pb-3 border-b-2 border-transparent hover:border-gray-300 transition font-medium">
+                    Admin
+                </a>
+            </li>
             <li>
                 <a href="{{ route('login') }}" 
                    class="block px-6 py-3 ml-4 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition font-medium">
