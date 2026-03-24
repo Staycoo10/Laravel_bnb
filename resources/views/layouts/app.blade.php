@@ -13,7 +13,6 @@
     @include('components.header')
 
     <!-- Navigation Menu -->
-    @include('components.menu')
 
     <!-- Main Content -->
     <main class="min-h-screen">
